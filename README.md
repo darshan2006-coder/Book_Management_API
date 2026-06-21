@@ -1,47 +1,43 @@
-# Book Management API
+# 📚 Library Management API
 
-A simple RESTful API built using Flask and SQLite for managing books.
+A RESTful Library Management API built with Flask, SQLAlchemy, and SQLite. It provides book inventory management, borrowing and returning books, overdue tracking, fine calculation, and library dashboard analytics.
 
-## Technologies Used
+## 🚀 Features
+
+* Book CRUD Operations
+* Book Borrow & Return
+* Borrow History
+* Overdue Book Tracking
+* Fine Calculation
+* Library Dashboard
+* ISBN Validation
+* Modular Flask Architecture
+* RESTful API Design
+
+## 🛠 Tech Stack
 
 * Python
 * Flask
-* Flask-SQLAlchemy
+* SQLAlchemy
 * SQLite
-* Postman
 
-## Features
+## 📌 API Endpoints
 
-* Get all books
-* Get a book by ID
-* Add a new book
-* Update a book
-* Delete a book
-* Validation and error handling
+* GET /books
+* POST /books
+* GET /books/<id>
+* PUT /books/<id>
+* DELETE /books/<id>
+* POST /borrow
+* POST /return/<borrow_id>
+* GET /borrow-history
+* GET /overdue
+* GET /fine/<borrow_id>
+* GET /dashboard
 
-## API Endpoints
+## ▶️ Run Locally
 
-### Get All Books
-
-GET /books
-
-### Get Book By ID
-
-GET /books/<id>
-
-### Add Book
-
-POST /books
-
-### Update Book
-
-PUT /books/<id>
-
-### Delete Book
-
-DELETE /books/<id>
-
-## Run Project
+```bash
 
 Create virtual environment:
 
