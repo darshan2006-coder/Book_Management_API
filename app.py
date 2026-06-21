@@ -261,6 +261,32 @@ def return_book(borrow_id):
         }
     }), 200
 
+@app.route('/borrow-history', methods=['GET'])
+def borrow_history():
+
+    records = BorrowRecord.query.all()
+
+    history = []
+
+    for record in records:
+
+        history.append({
+            "borrow_id": record.id,
+            "book": record.book.title,
+            "borrower_name": record.borrower_name,
+            "borrower_email": record.borrower_email,
+            "borrow_date": str(record.borrow_date),
+            "due_date": str(record.due_date),
+            "returned": record.returned,
+            "return_date": str(record.return_date) if record.return_date else None
+        })
+
+    return jsonify({
+        "success": True,
+        "count": len(history),
+        "history": history
+    }), 200
+
 # Get Single Book
 @app.route('/books/<int:id>', methods=['GET'])
 def get_book(id):
